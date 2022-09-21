@@ -23,16 +23,16 @@ h1{
 .total {
   border: 1px solid blue;
   margin: 0 auto;
-  width: 90%;
-  height: 45%;
-  
+  width: 95%;
+  height: 48%;
+  position: relative;
 }
 
 .profit {
   border: 1px solid blue;
   margin: 0 auto;
-  width: 90%;
-  height: 45%;
+  width: 95%;
+  height: 48%;
 }
 
 .right {

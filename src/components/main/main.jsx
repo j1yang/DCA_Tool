@@ -30,6 +30,51 @@ const Main = (props) => {
       shares: 1820.848084,
       input: 956.5820698,
       goal: 2000
+    },
+    {
+      id: '3',
+      tickerSymbol: 'ADA',
+      name: 'Cardano',
+      averagePrice: 0.52535,
+      shares: 1820.848084,
+      input: 956.5820698,
+      goal: 2000
+    },
+    {
+      id: '3',
+      tickerSymbol: 'ADA',
+      name: 'Cardano',
+      averagePrice: 0.52535,
+      shares: 1820.848084,
+      input: 956.5820698,
+      goal: 2000
+    },
+    {
+      id: '3',
+      tickerSymbol: 'ADA',
+      name: 'Cardano',
+      averagePrice: 0.52535,
+      shares: 1820.848084,
+      input: 956.5820698,
+      goal: 2000
+    },
+    {
+      id: '3',
+      tickerSymbol: 'ADA',
+      name: 'Cardano',
+      averagePrice: 0.52535,
+      shares: 1820.848084,
+      input: 956.5820698,
+      goal: 2000
+    },
+    {
+      id: '3',
+      tickerSymbol: 'ADA',
+      name: 'Cardano',
+      averagePrice: 0.52535,
+      shares: 1820.848084,
+      input: 956.5820698,
+      goal: 2000
     }
   ]);
   return (
