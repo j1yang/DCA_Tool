@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import DisplayRecords from '../displayRecords/displayRecords';
 import DisplayTotal from '../displayTotal/displayTotal';
 import styles from './main.module.css';
 
@@ -77,13 +78,51 @@ const Main = (props) => {
       goal: 2000
     }
   ]);
+  const [assetRecords, setAssetRecords] = useState([
+    {
+      id: '1',
+      assetId: '1',
+      date: Date.now(), 
+      price: 21162,
+      amount: 215.8761014,
+      shares: 0.01020112
+    },
+    {
+      id: '2',
+      assetId: '1',
+      date: Date.now(), 
+      price: 18692.70,
+      amount: 141.464131,
+      shares: 0.00756788
+    },
+    {
+      id: '3',
+      assetId: '2',
+      date: Date.now(), 
+      price: 0.376737,
+      amount: 8970.6285152,
+      shares: 4382.6365
+    }
+  ]);
+  const [filteredRecords, setfilteredRecords] = useState(null);
+
+  const findRecords = (assetId) => {
+    const filtered = assetRecords.filter(record => {
+      return record.assetId === assetId;
+    });
+
+    if (filtered.length === 0){
+      return null;
+    }
+    setfilteredRecords(filtered);
+  };
   return (
     <>
       <h1>DCA Dashboard</h1>
       <div className={styles.main}>
         <div className={styles.left}>
           <div className={styles.total}>
-            <DisplayTotal assets ={assets}/>
+            <DisplayTotal assets ={assets} findRecords={findRecords}/>
           </div>
           <div className={styles.profit}>
             this is profit table
@@ -94,7 +133,7 @@ const Main = (props) => {
             this is market price table
           </div>
           <div className={styles.records}>
-            this is detail trade history
+            <DisplayRecords filtered={filteredRecords}/>
           </div>
         </div>
       </div>
