@@ -1,11 +1,11 @@
 import React from 'react';
 import styles from './assetLineItem.module.css';
 
-const AssetLineItem = ({asset, findRecordId}) => {
+const AssetLineItem = ({asset, findAssetId}) => {
   const {id, tickerSymbol, name, averagePrice, shares,input, goal} = asset;
-  const onClick = (e) => {
-    findRecordId(id);
-  }
+  const onClick = () => {
+    findAssetId(id);
+  };
   return (
     <tr className={styles.row} onClick={onClick}>
       <td className={styles.tickerSymbol}>{tickerSymbol}</td>

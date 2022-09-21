@@ -104,25 +104,19 @@ const Main = (props) => {
       shares: 4382.6365
     }
   ]);
-  const [filteredRecords, setfilteredRecords] = useState(null);
+  const [assetId, setAssetId] = useState(0);
 
-  const findRecords = (assetId) => {
-    const filtered = assetRecords.filter(record => {
-      return record.assetId === assetId;
-    });
-
-    if (filtered.length === 0){
-      return null;
-    }
-    setfilteredRecords(filtered);
+  const findAssetId = (assetId) => {
+    setAssetId(assetId);
   };
+
   return (
     <>
       <h1>DCA Dashboard</h1>
       <div className={styles.main}>
         <div className={styles.left}>
           <div className={styles.total}>
-            <DisplayTotal assets ={assets} findRecords={findRecords}/>
+            <DisplayTotal assets ={assets} findAssetId={findAssetId}/>
           </div>
           <div className={styles.profit}>
             this is profit table
@@ -133,7 +127,7 @@ const Main = (props) => {
             this is market price table
           </div>
           <div className={styles.records}>
-            <DisplayRecords filtered={filteredRecords}/>
+            <DisplayRecords records={assetRecords} assetId={assetId}/>
           </div>
         </div>
       </div>
