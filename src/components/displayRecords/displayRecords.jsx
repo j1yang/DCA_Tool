@@ -1,17 +1,29 @@
 import React from 'react';
+import { useRef } from 'react';
+import { useState, useEffect } from 'react';
+import RecordLineItem from '../recordLineItem/recordLineItem';
 
-const DisplayRecords = ({filtered}) =>{
-  {
-    if(filtered === null){
-      return;
-    }
+const DisplayRecords = ({records, assetId}) =>{
+  const [filtered, setFiltered] = useState(null);
 
-    filtered.map(item =>(
-      console.log(item)
-    ));
+  useEffect(()=>{
+    const filteredTxns = records.filter(record => record.assetId === assetId);
+    setFiltered(filteredTxns);
+  },[assetId]);
+
+  if(assetId === 0){
+    return;
   }
+
+  
   return(
-    <h1>this is records</h1>
+    <section>
+      <h1>Transaction History {assetId}</h1>
+      
+      {filtered.map(item => (
+        <RecordLineItem filtered={item}/>
+      ))}
+    </section>
   );
 };
 
