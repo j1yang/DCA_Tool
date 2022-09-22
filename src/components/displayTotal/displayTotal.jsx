@@ -3,7 +3,7 @@ import AssetLineItem from '../assetLineItem/assetLineItem';
 import styles from './displayTotal.module.css';
 import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.min.css';
-const DisplayTotal = ({assets, findRecords}) => {
+const DisplayTotal = ({assets, findAssetId}) => {
   return (
     <section className={styles.DisplayTotal}>
       <h1 className={styles.title}>Assets</h1>
@@ -21,7 +21,7 @@ const DisplayTotal = ({assets, findRecords}) => {
           </thead>
           <tbody>
             {assets.map(asset => (
-              <AssetLineItem asset={asset} findRecordId={findRecords}/>
+              <AssetLineItem asset={asset} findAssetId={findAssetId}/>
             ))}
           </tbody>
         </Table>
