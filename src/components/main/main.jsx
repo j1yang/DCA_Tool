@@ -110,6 +110,10 @@ const Main = (props) => {
     setAssetId(assetId);
   };
 
+  const closeTxnHistory = () => {
+    setAssetId(0);
+  }
+
   return (
     <>
       <h1>DCA Dashboard</h1>
@@ -127,7 +131,7 @@ const Main = (props) => {
             this is market price table
           </div>
           <div className={styles.records}>
-            <DisplayRecords records={assetRecords} assetId={assetId}/>
+            <DisplayRecords records={assetRecords} assetId={assetId} closeTxnHistory={closeTxnHistory}/>
           </div>
         </div>
       </div>
