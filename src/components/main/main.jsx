@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import DisplayQuotes from '../displayQuotes/displayQuotes';
 import DisplayRecords from '../displayRecords/displayRecords';
 import DisplayTotal from '../displayTotal/displayTotal';
 import styles from './main.module.css';
@@ -128,7 +129,7 @@ const Main = (props) => {
         </div>
         <div className={styles.right}>
           <div className={styles.market}>
-            this is market price table
+            <DisplayQuotes/>
           </div>
           <div className={styles.records}>
             <DisplayRecords records={assetRecords} assetId={assetId} closeTxnHistory={closeTxnHistory}/>
