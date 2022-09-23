@@ -28,7 +28,6 @@ const DisplayQuotes = (props) => {
           <button onClick={ refreshPage }>refresh</button>
         </div>
       </div>
-      {/* 결과 출력 */}
       <div className="result">
         {coins.map(coin => (
           <DisplayQuote coin={coin}/>
