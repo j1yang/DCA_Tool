@@ -2,20 +2,8 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import DisplayQuote from '../displayQuote/displayQuote';
 
-const DisplayQuotes = (props) => {
-  const [coins, setCoins] = useState([]);
+const DisplayQuotes = ({quotes}) => {
 
-  useEffect(() => {
-    fetch("https://api.coinpaprika.com/v1/tickers?quotes=USD")
-      .then(response => response.json())
-      .then(json => {
-          
-      console.log(json.slice(0, 1000));
-      setCoins(json.slice(0, 1000));
-    });
-    
-  }, [])
-  
   const refreshPage = ()=>{
     window.location.reload();
   }
@@ -29,8 +17,8 @@ const DisplayQuotes = (props) => {
         </div>
       </div>
       <div className="result">
-        {coins.map(coin => (
-          <DisplayQuote coin={coin}/>
+        {quotes.map(quote => (
+          <DisplayQuote coin={quote}/>
         ))}
       </div>
     </section>

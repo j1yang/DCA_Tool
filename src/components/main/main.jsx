@@ -1,110 +1,11 @@
 import React, { useState } from 'react';
+import DisplayProfits from '../displayProfits/displayProfits';
 import DisplayQuotes from '../displayQuotes/displayQuotes';
 import DisplayRecords from '../displayRecords/displayRecords';
 import DisplayTotal from '../displayTotal/displayTotal';
 import styles from './main.module.css';
 
-const Main = (props) => {
-  const [assets, setAssets] = useState([
-    {
-      id: '1',
-      tickerSymbol: 'BTC',
-      name: 'Bitcoin',
-      averagePrice: 20110,
-      shares: 0.01020112,
-      input: 215.8761014,
-      goal: 0.1
-    },
-    {
-      id: '2',
-      tickerSymbol: 'XRP',
-      name: 'Ripple',
-      averagePrice: 0.376737,
-      shares: 4382.6365,
-      input: 897.6285152,
-      goal: 5000
-    },
-    {
-      id: '3',
-      tickerSymbol: 'ADA',
-      name: 'Cardano',
-      averagePrice: 0.52535,
-      shares: 1820.848084,
-      input: 956.5820698,
-      goal: 2000
-    },
-    {
-      id: '3',
-      tickerSymbol: 'ADA',
-      name: 'Cardano',
-      averagePrice: 0.52535,
-      shares: 1820.848084,
-      input: 956.5820698,
-      goal: 2000
-    },
-    {
-      id: '3',
-      tickerSymbol: 'ADA',
-      name: 'Cardano',
-      averagePrice: 0.52535,
-      shares: 1820.848084,
-      input: 956.5820698,
-      goal: 2000
-    },
-    {
-      id: '3',
-      tickerSymbol: 'ADA',
-      name: 'Cardano',
-      averagePrice: 0.52535,
-      shares: 1820.848084,
-      input: 956.5820698,
-      goal: 2000
-    },
-    {
-      id: '3',
-      tickerSymbol: 'ADA',
-      name: 'Cardano',
-      averagePrice: 0.52535,
-      shares: 1820.848084,
-      input: 956.5820698,
-      goal: 2000
-    },
-    {
-      id: '3',
-      tickerSymbol: 'ADA',
-      name: 'Cardano',
-      averagePrice: 0.52535,
-      shares: 1820.848084,
-      input: 956.5820698,
-      goal: 2000
-    }
-  ]);
-  const [assetRecords, setAssetRecords] = useState([
-    {
-      id: '1',
-      assetId: '1',
-      date: Date.now(), 
-      price: 21162,
-      amount: 215.8761014,
-      shares: 0.01020112
-    },
-    {
-      id: '2',
-      assetId: '1',
-      date: Date.now(), 
-      price: 18692.70,
-      amount: 141.464131,
-      shares: 0.00756788
-    },
-    {
-      id: '3',
-      assetId: '2',
-      date: Date.now(), 
-      price: 0.376737,
-      amount: 8970.6285152,
-      shares: 4382.6365
-    }
-  ]);
+const Main = ({assets, quotes, assetRecords}) => {
   const [assetId, setAssetId] = useState(0);
 
   const findAssetId = (assetId) => {
@@ -121,15 +22,15 @@ const Main = (props) => {
       <div className={styles.main}>
         <div className={styles.left}>
           <div className={styles.total}>
-            <DisplayTotal assets ={assets} findAssetId={findAssetId}/>
+            <DisplayTotal assets={assets} findAssetId={findAssetId}/>
           </div>
           <div className={styles.profit}>
-            this is profit table
+            <DisplayProfits />
           </div>
         </div>
         <div className={styles.right}>
           <div className={styles.market}>
-            <DisplayQuotes/>
+            <DisplayQuotes quotes={quotes}/>
           </div>
           <div className={styles.records}>
             <DisplayRecords records={assetRecords} assetId={assetId} closeTxnHistory={closeTxnHistory}/>
