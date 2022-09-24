@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import DisplayProfits from '../displayProfits/displayProfits';
 import DisplayQuotes from '../displayQuotes/displayQuotes';
 import DisplayRecords from '../displayRecords/displayRecords';
 import DisplayTotal from '../displayTotal/displayTotal';
 import styles from './main.module.css';
+import profitService from '../../services/profit';
 
 const Main = ({assets, quotes, assetRecords}) => {
   const [assetId, setAssetId] = useState(0);
@@ -16,6 +17,7 @@ const Main = ({assets, quotes, assetRecords}) => {
     setAssetId(0);
   }
 
+
   return (
     <>
       <h1>DCA Dashboard</h1>
@@ -25,7 +27,7 @@ const Main = ({assets, quotes, assetRecords}) => {
             <DisplayTotal assets={assets} findAssetId={findAssetId}/>
           </div>
           <div className={styles.profit}>
-            <DisplayProfits />
+            <DisplayProfits assets={assets} />
           </div>
         </div>
         <div className={styles.right}>

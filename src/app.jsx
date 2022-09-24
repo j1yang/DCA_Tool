@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import{ useEffect, useState } from 'react';
 import './app.css';
 import Main from './components/main/main';
 
@@ -106,14 +106,44 @@ function App() {
   ]);
 
   const [quotes, setQuotes] = useState([]);
+  
+  const [profits,setProfits]= useState([]);
+
+  const calculate = (asset, price) =>{
+    const currentValue = 0.1 * asset.shares;
+    const earning = 
+    (asset.input > currentValue) ? 
+    (asset.input - currentValue)
+    :(-(currentValue - asset.input));
+    const sign = (earning >= 0) ? '+' : '-';
+    const percentage = 
+    ((currentValue - asset.input) >= 0) 
+    ? ((1-asset.input / currentValue) * 100)
+    : (-(1-currentValue / asset.input) * 100 );
+
+    const calculation = {
+      name: asset.name,
+      symbol: asset.tickerSymbol,
+      quantity: asset.shares,
+      purchasedValue: asset.input,
+      currentValue: currentValue,
+      sign: sign,
+      earning: earning,
+      percent: percentage,
+      quote: price
+    }
+
+    return calculation;
+  };
   useEffect(() => {
-    fetch("https://api.coinpaprika.com/v1/tickers?quotes=USD")
-      .then(response => response.json())
-      .then(json => {
-      console.log(json.slice(0, 1000));
-      setQuotes(json.slice(0, 1000));
+    const cp = require('coinpaprika-js');
+    const test = cp.markets('xrp-xrp')
+    .then(function(result){
+      const price = Object.values(result)[0].quotes.USD.price;
+      console.log(calculate(assets[1], parseFloat(price)));
     });
-  });
+    
+  },[]);
 
   return (
     <Main 
