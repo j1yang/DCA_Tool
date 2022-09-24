@@ -6,7 +6,7 @@ import DisplayTotal from '../displayTotal/displayTotal';
 import styles from './main.module.css';
 import profitService from '../../services/profit';
 
-const Main = ({assets, quotes, assetRecords}) => {
+const Main = ({assets, quotes, profits, assetRecords}) => {
   const [assetId, setAssetId] = useState(0);
 
   const findAssetId = (assetId) => {
@@ -27,7 +27,7 @@ const Main = ({assets, quotes, assetRecords}) => {
             <DisplayTotal assets={assets} findAssetId={findAssetId}/>
           </div>
           <div className={styles.profit}>
-            <DisplayProfits assets={assets} />
+            <DisplayProfits assets={assets} profits={profits} />
           </div>
         </div>
         <div className={styles.right}>

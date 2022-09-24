@@ -1,16 +1,18 @@
 import React from 'react';
 
-const DisplayProfits = (props) => {
+const DisplayProfits = ({profits}) => {
+  const {name, symbol, quantity, purchasedValue,
+     currentValue,sign, earning,percent, quote} = profits;
   return (
     <>
     <ul>
-      <li>Asset: Ripple</li>
-      <li>Symbol: XRP</li>
-      <li>Quantity: 150,000XRP</li>
-      <li>Purchased Value: $100,000</li>
-      <li>Current Value: $230,000</li>
-      <li>Earning: $130,000</li>
-      <li>%: +43%</li>
+      <li>Asset: {name}</li>
+      <li>Symbol: {symbol}</li>
+      <li>Quantity: {quantity}{symbol}</li>
+      <li>Purchased Value: ${purchasedValue}</li>
+      <li>Current Value: ${currentValue}</li>
+      <li>Earning: {sign}${earning}</li>
+      <li>%: {sign}{percent}%</li>
     </ul>
     </>
   );
