@@ -11,16 +11,18 @@ function App({profitService}) {
       averagePrice: 20110,
       shares: 0.01020112,
       input: 215.8761014,
-      goal: 0.1
+      goal: 0.1,
+      apiId: 'BTC-Bitcoin'
     },
     {
       id: '2',
       tickerSymbol: 'XRP',
-      name: 'Ripple',
+      name: 'XRP',
       averagePrice: 0.376737,
       shares: 4382.6365,
       input: 897.6285152,
-      goal: 5000
+      goal: 5000,
+      apiId: 'XRP-XRP'
     },
     {
       id: '3',
@@ -29,52 +31,8 @@ function App({profitService}) {
       averagePrice: 0.52535,
       shares: 1820.848084,
       input: 956.5820698,
-      goal: 2000
-    },
-    {
-      id: '3',
-      tickerSymbol: 'ADA',
-      name: 'Cardano',
-      averagePrice: 0.52535,
-      shares: 1820.848084,
-      input: 956.5820698,
-      goal: 2000
-    },
-    {
-      id: '3',
-      tickerSymbol: 'ADA',
-      name: 'Cardano',
-      averagePrice: 0.52535,
-      shares: 1820.848084,
-      input: 956.5820698,
-      goal: 2000
-    },
-    {
-      id: '3',
-      tickerSymbol: 'ADA',
-      name: 'Cardano',
-      averagePrice: 0.52535,
-      shares: 1820.848084,
-      input: 956.5820698,
-      goal: 2000
-    },
-    {
-      id: '3',
-      tickerSymbol: 'ADA',
-      name: 'Cardano',
-      averagePrice: 0.52535,
-      shares: 1820.848084,
-      input: 956.5820698,
-      goal: 2000
-    },
-    {
-      id: '3',
-      tickerSymbol: 'ADA',
-      name: 'Cardano',
-      averagePrice: 0.52535,
-      shares: 1820.848084,
-      input: 956.5820698,
-      goal: 2000
+      goal: 2000,
+      apiId: 'ADA-Cardano'
     }
   ]);
 
@@ -109,15 +67,27 @@ function App({profitService}) {
   
   const [profits,setProfits]= useState([]);
 
+  const cp = require('coinpaprika-js');
+
   useEffect(() => {
-    const cp = require('coinpaprika-js');
-    const test = cp.markets('xrp-xrp')
-    .then(function(result){
-      const price = Object.values(result)[0].quotes.USD.price;
-      const profit = profitService.calculate(assets[1], parseFloat(price));
-      setProfits(profit);
-    });
-    
+    let updated = [];
+    let x = 0 ;
+    const map = assets.map((asset)=>{
+      cp.markets(asset.apiId)
+      .then(results => {
+        const price = Object.values(results)[0].quotes.USD.price;
+        return profitService.calculate(asset, parseFloat(price));
+      })
+      .then(profit => {
+        updated = [...updated, profit];
+        x++;
+        //console.log(updated);
+        if(x===3){
+          setProfits(updated);
+          // console.log(`${x}profits udpated`);
+        }
+      });
+    })
   },[]);
 
   return (
