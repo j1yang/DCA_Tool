@@ -25,7 +25,6 @@ class ProfitService{
 
     return calculation;
   };
-
 }
 
 export default ProfitService;

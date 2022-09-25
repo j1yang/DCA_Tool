@@ -27,7 +27,7 @@ const Main = ({assets, quotes, profits, assetRecords}) => {
             <DisplayTotal assets={assets} findAssetId={findAssetId}/>
           </div>
           <div className={styles.profit}>
-            <DisplayProfits assets={assets} profits={profits} />
+            <DisplayProfits profits={profits} />
           </div>
         </div>
         <div className={styles.right}>
