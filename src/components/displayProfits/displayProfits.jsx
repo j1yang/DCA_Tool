@@ -1,17 +1,18 @@
 import React from 'react';
-import DisplayProfit from '../displayProfit/displayProfit';
-
+import ProfitLineItem from '../profitLineItem/profitLineItem';
 const DisplayProfits = ({profits}) => {
-  
   return (
-    <ul>
-      
-      {profits.map((profit)=>{
-        {console.log(profit)}
-        <DisplayProfit profit={profit} />
-      })}
-    </ul>
+    <section>
+      <ul>
+        {profits.map((profit)=>(
+          <ProfitLineItem profit={profit}/>
+        ))}
+      </ul>
+    </section>
   );
 };
 
 export default DisplayProfits;
+
+
+
