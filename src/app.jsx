@@ -1,6 +1,7 @@
 import{ useEffect, useState } from 'react';
 import './app.css';
 import Main from './components/main/main';
+import ProfitLineItem from './components/profitLineItem/profitLineItem';
 
 function App({profitService}) {
   const [assets, setAssets] = useState([
@@ -70,21 +71,34 @@ function App({profitService}) {
   const cp = require('coinpaprika-js');
 
   useEffect(() => {
-    let updated = [];
+    let updatedProfit = [];
+    let updatedQuote =[];
     let x = 0 ;
-    const map = assets.map((asset)=>{
-      cp.markets(asset.apiId)
+    assets.map((asset)=>{
+      cp.ticker(asset.apiId, { quotes: "USD" })
       .then(results => {
-        const price = Object.values(results)[0].quotes.USD.price;
+        const price = Object.values(results)[4];
         return profitService.calculate(asset, parseFloat(price));
       })
       .then(profit => {
-        updated = [...updated, profit];
+        updatedProfit = [...updatedProfit, profit];
         x++;
         //console.log(updated);
         if(x===3){
-          setProfits(updated);
-          // console.log(`${x}profits udpated`);
+          setProfits(updatedProfit);
+        }
+      });
+
+      cp.ticker(asset.apiId, { quotes: "USD" })
+      .then(results => {
+        const priceChange = Object.values(results)[12];
+        const price = Object.values(results)[4];
+        return profitService.getQuote(asset, parseFloat(price), parseFloat(priceChange));
+      }).then(quote => {
+        updatedQuote = [...updatedQuote, quote];
+        if(x===3){
+          setQuotes(updatedQuote);
+          
         }
       });
     })
