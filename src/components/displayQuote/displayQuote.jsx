@@ -1,7 +1,7 @@
 import React from 'react';
 
 const DisplayQuote = ({coin}) => {
-  const {id, name , symbol , quotes} = coin;
+  const {name , symbol , price, priceChange} = coin;
 
   
   return(
@@ -9,8 +9,8 @@ const DisplayQuote = ({coin}) => {
       <ul>
         <li>{name}</li>
         <li>{symbol}</li>
-        <li>{quotes.USD.price}</li>
-        <li>{quotes.USD.percent_change_24h}</li>
+        <li>{price}</li>
+        <li>{priceChange}</li>
       </ul>
     </>
   );

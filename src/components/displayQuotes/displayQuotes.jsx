@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
 import DisplayQuote from '../displayQuote/displayQuote';
 
 const DisplayQuotes = ({quotes}) => {
@@ -7,7 +6,6 @@ const DisplayQuotes = ({quotes}) => {
   const refreshPage = ()=>{
     window.location.reload();
   }
-
   return(
     <section className="coin-tracker">
       <div className="title">
