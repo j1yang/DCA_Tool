@@ -25,6 +25,17 @@ class ProfitService{
 
     return calculation;
   };
+
+  getQuote = (asset, price, priceChange)=>{
+    const quote = {
+      name: asset.name,
+      symbol: asset.tickerSymbol,
+      price: price,
+      priceChange: priceChange
+    }
+
+    return quote;
+  }
 }
 
 export default ProfitService;
