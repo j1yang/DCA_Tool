@@ -1,0 +1,32 @@
+.line {
+  display: flex;
+  font-size: 14px;
+  text-align: center;
+}
+
+.line li{
+  list-style: none;
+  border: 1px solid black;
+}
+
+.name{
+  min-width: 70px;
+}
+.symbol{
+  min-width: 70px;
+}
+.quantity{
+  min-width: 110px;
+}
+.purchased{
+  min-width: 120px;
+}
+.current{
+  min-width: 120px;
+}
+.earning{
+  min-width: 100px;
+}
+.percentage{
+  min-width: 80px;
+}
