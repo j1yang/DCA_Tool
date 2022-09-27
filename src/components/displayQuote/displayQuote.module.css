@@ -1,0 +1,26 @@
+.title{
+  font-size: 25px;
+}
+
+.line{
+  display: flex;
+  list-style: none;
+  font-size: 14px;
+}
+.line li{
+  border: 1px solid black;
+  text-align: center;
+}
+
+.name{
+  min-width: 80px;
+}
+.symbol{
+  min-width: 80px;
+}
+.price{
+  min-width: 120px;
+}
+.priceChange{
+  min-width: 100px;
+}
