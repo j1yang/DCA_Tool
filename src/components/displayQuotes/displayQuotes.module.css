@@ -1,0 +1,51 @@
+.coin_tracker{
+  margin-top: .5em;
+}
+
+.title_container{
+  display: flex;
+  justify-content: center;
+}
+
+.title{
+  font-size: 25px;
+  text-align: center;
+  margin-right: 0.3em;
+}
+
+.btnRefresh{
+  padding: 0em;
+  width: 30px;
+  height: 30px;
+}
+
+.quotes{
+  border: 1px solid red;
+  text-align: center;
+}
+
+.quotes ul{
+  padding: 0;
+}
+
+.category{
+  display: flex;
+  list-style: none;
+}
+
+.category li {
+  border: 1px solid black;
+}
+
+.name{
+  min-width: 80px;
+}
+.symbol{
+  min-width: 80px;
+}
+.price{
+  min-width: 120px;
+}
+.priceChange{
+  min-width: 100px;
+}

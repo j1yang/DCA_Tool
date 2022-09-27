@@ -30,8 +30,8 @@ class ProfitService{
     const quote = {
       name: asset.name,
       symbol: asset.tickerSymbol,
-      price: price,
-      priceChange: priceChange
+      price: price.toFixed(4),
+      priceChange: priceChange.toFixed(2)
     }
 
     return quote;
