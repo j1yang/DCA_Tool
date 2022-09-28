@@ -21,7 +21,7 @@ const Main = ({assets, quotes, profits, assetRecords}) => {
   return (
     <>
       <h1>
-      🤑 Dollar Cost Averaging Time! 💵
+      💰 Dollar Cost Averaging Time! 🤑
       </h1>
       <div className={styles.main}>
         <div className={styles.left}>
