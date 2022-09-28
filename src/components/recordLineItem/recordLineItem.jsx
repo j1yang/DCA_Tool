@@ -5,14 +5,12 @@ const RecordLineItem = ({filtered}) => {
 
   
   return(
-    <>
-      <ul>
-        <li>{date}</li>
-        <li>{price}</li>
-        <li>{amount}</li>
-        <li>{shares}</li>
-      </ul>
-    </>
+    <div>
+      <li>{date}</li>
+      <li>{price}</li>
+      <li>{amount}</li>
+      <li>{shares}</li>
+    </div>
   );
 };
 

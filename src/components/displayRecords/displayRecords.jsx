@@ -2,6 +2,7 @@ import React from 'react';
 import { useRef } from 'react';
 import { useState, useEffect } from 'react';
 import RecordLineItem from '../recordLineItem/recordLineItem';
+import styles from './displayRecords.module.css';
 
 const DisplayRecords = ({records, assetId, closeTxnHistory}) =>{
   const [filtered, setFiltered] = useState(null);
@@ -15,7 +16,7 @@ const DisplayRecords = ({records, assetId, closeTxnHistory}) =>{
     return;
   }
   return(
-    <section>
+    <section className={styles.records}>
       <h1>Transaction History {assetId}</h1>
       <button onClick={closeTxnHistory}>x</button>
       {filtered.map(item => (

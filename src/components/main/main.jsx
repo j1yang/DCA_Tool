@@ -20,7 +20,9 @@ const Main = ({assets, quotes, profits, assetRecords}) => {
 
   return (
     <>
-      <h1>DCA Dashboard</h1>
+      <h1>
+      🤑 Dollar Cost Averaging Time! 💵
+      </h1>
       <div className={styles.main}>
         <div className={styles.left}>
           <div className={styles.total}>
