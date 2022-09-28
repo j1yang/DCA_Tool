@@ -1,12 +1,24 @@
 .line {
+  color: rgb(245, 245, 245);
   display: flex;
   font-size: 14px;
   text-align: center;
+  border-radius: 20px;
+  margin: .3em auto;
+  width: 95%;
+  background-color: rgb(0, 0, 0);
+  box-shadow: rgb(228, 237, 248) 0px 10px 30px -10px;
 }
 
 .line li{
+  margin: .3em 0;
   list-style: none;
-  border: 1px solid black;
+  width: 100%;
+  padding: .2em;
+}
+
+.line li:not(:last-child){
+  border-right: .1px solid rgb(214, 214, 214);
 }
 
 .name{

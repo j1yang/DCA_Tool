@@ -8,12 +8,15 @@ h1{
   width: 90%;
   height: 530px;
   display: flex;
-  border: 1px solid red;
-
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, 
+  rgba(0, 0, 0, 0.12) 0px -12px 30px, 
+  rgba(0, 0, 0, 0.12) 0px 4px 6px, 
+  rgba(0, 0, 0, 0.17) 0px 12px 13px, 
+  rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .left {
-  border: 1px solid black;
   width: 60%;
   display: flex;
   flex-direction: column;
@@ -21,21 +24,38 @@ h1{
 }
 
 .total {
-  border: 1px solid blue;
+  border-radius: 15px;
   margin: 0 auto;
   width: 95%;
   height: 48%;
-  position: relative;
+  position: relative;  
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
-
 .profit {
-  border: 1px solid blue;
+  border-radius: 15px;
   margin: 0 auto;
   width: 95%;
   height: 48%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .right {
-  border: 1px solid black;
+  position: relative;
   width: 40%;
+  display: flex;
+  margin-top: 8px;
+}
+
+.market{
+  border-radius: 15px;
+  border: 1px solid blue;
+  width: 96%;
+  height: 98.7%;
+}
+.records{
+  position: absolute;
+  border-radius: 15px;
+  border: 1px solid red;
+  width: 96%;
+  height: 98.7%;
 }
