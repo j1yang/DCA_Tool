@@ -10,15 +10,15 @@ const DisplayQuotes = ({quotes}) => {
     <section className={styles.coin_tracker}>
       <div className={styles.title_container}>
         <h2 className={styles.title}>Market Live</h2>
-        <button 
-          className={styles.btnRefresh}
-          onClick={ refreshPage }>
-          re
-        </button>
+        <div className={styles.btnRefresh} onClick={ refreshPage } >
+        <i
+          class="fa-solid fa-arrows-rotate">
+        </i>
+        </div>
       </div>
       <ul className={styles.quotes}>
         <div className={styles.category}>
-        <li className={styles.name}>Name</li>
+          <li className={styles.name}>Name</li>
           <li className={styles.symbol}>Symbol</li>
           <li className={styles.price}>Price</li>
           <li className={styles.priceChange}>24h Change</li>

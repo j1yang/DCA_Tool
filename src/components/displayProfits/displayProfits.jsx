@@ -7,7 +7,7 @@ const DisplayProfits = ({profits}) => {
       <h2 className={styles.title}>Calculation</h2>
       <ul>
         <div className={styles.category}>
-        <li className={styles.name}>Name</li>
+          <li className={styles.name}>Name</li>
           <li className={styles.symbol}>Symbol </li>
           {/* <li className={styles.quantity}>Quantity</li> */}
           <li className={styles.purchased}>Purchased Value</li>
