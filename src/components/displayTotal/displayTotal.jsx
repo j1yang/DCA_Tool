@@ -7,25 +7,20 @@ const DisplayTotal = ({assets, findAssetId}) => {
   return (
     <section className={styles.DisplayTotal}>
       <h1 className={styles.title}>Assets</h1>
-      <div className={styles.table_container}>
-        <Table className={styles.table}  bordered hover size="sm">
-          <thead>
-            <tr>
-              <th>Ticker</th>
-              <th>Name</th>
-              <th>Avg Price</th>
-              <th>Shares</th>
-              <th>Input</th>
-              <th>Goal</th>
-            </tr>
-          </thead>
-          <tbody>
-            {assets.map(asset => (
+      <ul className={styles.assets}>
+        <div className={styles.category}>
+          <li className={styles.ticker}>Ticker</li>
+          <li className={styles.name}>Name</li>
+          <li className={styles.avgPrice}>Avg Price</li>
+          {/* <li className={styles.quantity}>Quantity</li> */}
+          <li className={styles.shares}>Shares</li>
+          <li className={styles.input}>Input</li>
+          <li className={styles.goal}>Goal</li>
+        </div>
+        {assets.map(asset => (
               <AssetLineItem asset={asset} findAssetId={findAssetId}/>
-            ))}
-          </tbody>
-        </Table>
-      </div>
+        ))}
+      </ul>
     </section>
   );
 }

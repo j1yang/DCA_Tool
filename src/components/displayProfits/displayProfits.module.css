@@ -12,10 +12,14 @@
   font-weight: bold;
 }
 
+.profits{
+  padding-top: .5em;
+}
+
 .profits ul{
   min-width: 400px;
   padding: 0;
-  height: 81%;
+  height: 98%;
 }
 
 .category{

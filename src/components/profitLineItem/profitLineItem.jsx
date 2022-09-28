@@ -4,8 +4,6 @@ const ProfitLineItem = ({profit}) => {
   const {name, symbol, quantity, purchasedValue,
     currentValue,sign, earning,percent, quote} = profit;
   return(
-    <>
-    
     <div className={styles.line}>
       <li className={styles.name}>{name}</li>
       <li className={styles.symbol}>{symbol}</li>
@@ -14,7 +12,7 @@ const ProfitLineItem = ({profit}) => {
       <li className={styles.current}>${currentValue}</li>
       <li className={styles.earning}>{sign}${earning}</li>
       <li className={styles.percentage}>{sign}{percent}%</li>
-    </div></>
+    </div>
   );
 };
 

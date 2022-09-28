@@ -4,8 +4,7 @@ import styles from './displayProfits.module.css';
 const DisplayProfits = ({profits}) => {
   return (
     <section className={styles.profits}>
-      <h2 className={styles.title}>Calculation</h2>
-      <ul>
+      <ul >
         <div className={styles.category}>
           <li className={styles.name}>Name</li>
           <li className={styles.symbol}>Symbol </li>

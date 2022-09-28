@@ -7,14 +7,15 @@ const AssetLineItem = ({asset, findAssetId}) => {
     findAssetId(id);
   };
   return (
-    <tr className={styles.row} onClick={onClick}>
-      <td className={styles.tickerSymbol}>{tickerSymbol}</td>
-      <td className={styles.name}>{name}</td>
-      <td className={styles.averagePrice}>{averagePrice}</td>
-      <td className={styles.shares}>{shares}</td>
-      <td className={styles.input}>{input}</td>
-      <td className={styles.goal}>{goal}</td>
-    </tr>
+    <div className={styles.line} onClick={onClick}>
+      <li className={styles.ticker}>{tickerSymbol}</li>
+      <li className={styles.name}>{name}</li>
+      {/* <li className={styles.quantity}>{quantity}{symbol}</li> */}
+      <li className={styles.avgPrice}>{averagePrice.toFixed(4)}</li>
+      <li className={styles.shares}>{shares.toFixed(2)}</li>
+      <li className={styles.input}>{input.toFixed(2)}</li>
+      <li className={styles.goal}>{goal.toFixed(2)}</li>
+    </div>
   );
 };
 

@@ -1,23 +1,54 @@
-.DisplayTotal{
-  width: 100%;
-  height: 100%;
+.coin_tracker{
+  margin-top: .5em;
+}
+
+.title_container{
+  display: flex;
+  justify-content: center;
 }
 
 .title{
-  font-size: 25px;
-}
-
-.table_container {
-  height: 208px;
-  overflow: auto;
-}
-
-.table thead{
-  background-color: white;
-  border: 1px solid #dee2e6;
-  position: sticky; 
-  top: 0; 
-  z-index: 1; 
   text-align: center;
-  font-size: 13px;
+  margin-right: 0.3em;
+  font-size: 25px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  padding-top: .4em;
+}
+
+.assets{
+  padding: 0;
+  width: 100%;
+  height: 460px;
+  margin: 0 auto;
+}
+
+.category{
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  display: flex;
+  list-style: none;
+  text-align: center;
+  width: 95%;
+  margin: 0 auto;
+  font-weight: bold;
+}
+
+.ticker{
+  min-width: 100px;
+}
+.name{
+  min-width: 100px;
+}
+.avgPrice{
+  min-width: 120px;
+}
+.shares{
+  min-width: 100px;
+}
+.input{
+  min-width: 100px;
+}
+.goal{
+  min-width: 100px;
 }

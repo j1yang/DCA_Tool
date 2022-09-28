@@ -1,5 +1,42 @@
-.row td{
+.line{
+  color: rgb(245, 245, 245);
+  display: flex;
+  list-style: none;
+  font-size: 14px;
   text-align: center;
-  font-size: 11px;
-  cursor: pointer;
+  width: 95%;
+  margin: 0 auto;
+  background-color: rgb(0, 0, 0);
+  border-radius: 20px;
+  margin: .3em auto;
+  box-shadow: rgb(255, 255, 255) 0px 10px 30px -10px;
+}
+
+.line li{
+  text-align: center;
+  padding: .2em;
+  margin: .3em 0;
+}
+
+.line li:not(:last-child){
+  border-right: .1px solid rgb(214, 214, 214);
+}
+
+.ticker{
+  min-width: 100px;
+}
+.name{
+  min-width: 100px;
+}
+.avgPrice{
+  min-width: 120px;
+}
+.shares{
+  min-width: 100px;
+}
+.input{
+  min-width: 100px;
+}
+.goal{
+  min-width: 100px;
 }
