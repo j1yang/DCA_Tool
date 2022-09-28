@@ -41,6 +41,9 @@ const Main = ({assets, quotes, profits, assetRecords}) => {
           </div>
         </div>
       </div>
+      <p className={styles.footer}>
+        Copyright ©️ 2022 JaewonYang All Rights Reserved
+      </p>
     </>
   );
 }
