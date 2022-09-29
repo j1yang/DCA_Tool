@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from './assetLineItem.module.css';
 
-const AssetLineItem = ({asset, findAssetId}) => {
+const AssetLineItem = ({asset, findAssetId, getComponentName}) => {
   const {id, tickerSymbol, name, averagePrice, shares,input, goal} = asset;
   const onClick = () => {
     findAssetId(id);
+    getComponentName('transaction');
   };
   return (
     <div className={styles.line} onClick={onClick}>

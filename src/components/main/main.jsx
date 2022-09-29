@@ -15,8 +15,28 @@ const Main = ({assets, quotes, profits, assetRecords}) => {
 
   const closeTxnHistory = () => {
     setAssetId(0);
+    getComponentName('quote');
   }
 
+  const renderSwitch = (componentName)=>{
+    switch(componentName) {
+      case 'quote':
+        return <div className={styles.market}>
+        <DisplayQuotes 
+          quotes={quotes}
+        />
+      </div>;
+      default:
+        return null;
+    }
+  }
+
+  const [componentName,setComponentName] = useState('quote');
+
+  const getComponentName = (componentName) => {
+    const component = (componentName === null) ? 'quote' : componentName;
+    setComponentName(component);
+  };
 
   return (
     <>
@@ -26,18 +46,28 @@ const Main = ({assets, quotes, profits, assetRecords}) => {
       <div className={styles.main}>
         <div className={styles.left}>
           <div className={styles.total}>
-            <DisplayTotal assets={assets} findAssetId={findAssetId}/>
+            <DisplayTotal 
+              assets={assets} 
+              findAssetId={findAssetId} 
+              componentName={getComponentName}
+            />
           </div>
           <div className={styles.profit}>
             <DisplayProfits profits={profits}/>
           </div>
         </div>
         <div className={styles.right}>
-          <div className={styles.market}>
-            <DisplayQuotes quotes={quotes}/>
-          </div>
+          {
+            renderSwitch(componentName)
+          }
+          
           <div className={styles.records}>
-            <DisplayRecords records={assetRecords} assetId={assetId} closeTxnHistory={closeTxnHistory}/>
+            <DisplayRecords 
+              records={assetRecords} 
+              assetId={assetId} 
+              closeTxnHistory={closeTxnHistory}
+              componentName={getComponentName}
+            />
           </div>
         </div>
       </div>
