@@ -1,0 +1,35 @@
+.line{
+  color: rgb(245, 245, 245);
+  display: flex;
+  list-style: none;
+  font-size: 14px;
+  text-align: center;
+  width: 95%;
+  margin: 0 auto;
+  background-color: rgb(0, 0, 0);
+  border-radius: 20px;
+  margin: .3em auto;
+  box-shadow: rgb(31, 128, 255) 0px 10px 30px -10px;
+}
+.line li{
+  text-align: center;
+  padding: .2em;
+  margin: .3em 0;
+}
+
+.line li:not(:last-child){
+  border-right: .1px solid rgb(214, 214, 214);
+}
+
+.date{
+  min-width: 100px;
+}
+.price{
+  min-width: 100px;
+}
+.amount{
+  min-width: 90px;
+}
+.shares{
+  min-width: 100px;
+}
