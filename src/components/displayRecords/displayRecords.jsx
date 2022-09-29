@@ -17,11 +17,23 @@ const DisplayRecords = ({records, assetId, closeTxnHistory}) =>{
   }
   return(
     <section className={styles.records}>
-      <h1>Transaction History {assetId}</h1>
-      <button onClick={closeTxnHistory}>x</button>
-      {filtered.map(item => (
-        <RecordLineItem filtered={item}/>
-      ))}
+      <div className={styles.title_container}>
+        <h1 className={styles.title}>Transaction History</h1>
+        <div className={styles.btnClose} onClick={closeTxnHistory}>
+          <i class="fa-regular fa-circle-xmark"></i>
+        </div>
+      </div>
+      <ul>
+        <div className={styles.category}>
+          <li className={styles.date}>Date</li>
+          <li className={styles.price}>Price</li>
+          <li className={styles.amount}>Amount</li>
+          <li className={styles.shares}>Shares</li>
+        </div>
+        {filtered.map(item => (
+          <RecordLineItem filtered={item} />
+        ))}
+      </ul>
     </section>
   );
 };

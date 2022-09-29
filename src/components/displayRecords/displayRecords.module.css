@@ -1,0 +1,61 @@
+.title_container{
+  display: flex;
+  justify-content: center;
+
+}
+
+.title{
+  font-size: 25px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  padding-top: 0.3em;
+  margin: 0;
+  margin-right: .3em;
+}
+
+.btnClose{
+  font-size: 20px;
+  color: black;
+  cursor: pointer;
+  margin-top: .4em;
+  z-index: 1;
+}
+
+.btnClose :hover{
+  color: gold;
+}
+
+.records{
+  width: 95%;
+  height: 460px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.records ul{
+  padding-left: 0;
+}
+.category{
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  display: flex;
+  list-style: none;
+  text-align: center;
+  width: 95%;
+  margin: 0 auto;
+  font-weight: bold;
+  margin-top: 0.7em;
+}
+
+.date{
+  min-width: 100px;
+}
+.price{
+  min-width: 100px;
+}
+.amount{
+  min-width: 90px;
+}
+.shares{
+  min-width: 100px;
+}

@@ -41,7 +41,7 @@ function App({profitService}) {
     {
       id: '1',
       assetId: '1',
-      date: Date.now(), 
+      date: '2022/09/28', 
       price: 21162,
       amount: 215.8761014,
       shares: 0.01020112
@@ -49,7 +49,7 @@ function App({profitService}) {
     {
       id: '2',
       assetId: '1',
-      date: Date.now(), 
+      date: '2022/09/28', 
       price: 18692.70,
       amount: 141.464131,
       shares: 0.00756788
@@ -57,7 +57,7 @@ function App({profitService}) {
     {
       id: '3',
       assetId: '2',
-      date: Date.now(), 
+      date: '2022/09/28', 
       price: 0.376737,
       amount: 8970.6285152,
       shares: 4382.6365
