@@ -1,9 +1,9 @@
-import{ useEffect, useState } from 'react';
+import{ BrowserRouter, Route, Routes, useEffect, useState } from 'react';
 import './app.css';
+import Login from './components/login/login';
 import Main from './components/main/main';
-import ProfitLineItem from './components/profitLineItem/profitLineItem';
 
-function App({profitService}) {
+function App({profitService, authService}) {
   const [assets, setAssets] = useState([
     {
       id: '1',
@@ -105,12 +105,24 @@ function App({profitService}) {
   },[]);
 
   return (
-    <Main 
-      assets={assets} 
-      profits={profits}
-      quotes={quotes} 
-      assetRecords={assetRecords}
-    />
+    <BrowserRouter>
+      <Routes>
+        <Route
+          exact
+          path='/'
+          element={<Login authService={authService}/>}
+        />
+        <Route
+          path='/main'
+          element={<Main 
+            assets={assets} 
+            profits={profits}
+            quotes={quotes} 
+            assetRecords={assetRecords}
+          />}
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
