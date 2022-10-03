@@ -1,4 +1,5 @@
-import{ BrowserRouter, Route, Routes, useEffect, useState } from 'react';
+import{ useEffect, useState } from 'react';
+import{ BrowserRouter, Route, Routes } from 'react-router-dom';
 import './app.css';
 import Login from './components/login/login';
 import Main from './components/main/main';
@@ -107,18 +108,19 @@ function App({profitService, authService}) {
   return (
     <BrowserRouter>
       <Routes>
-        <Route
+        <Route 
           exact
           path='/'
           element={<Login authService={authService}/>}
         />
         <Route
           path='/main'
-          element={<Main 
-            assets={assets} 
-            profits={profits}
-            quotes={quotes} 
-            assetRecords={assetRecords}
+          element={
+            <Main 
+              assets={assets} 
+              profits={profits}
+              quotes={quotes} 
+              assetRecords={assetRecords}
           />}
         />
       </Routes>
