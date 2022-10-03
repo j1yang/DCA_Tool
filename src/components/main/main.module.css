@@ -6,6 +6,10 @@ h1{
   font-weight: bold;
 }
 
+.logout{
+  cursor: pointer;
+}
+
 .main{
   margin: 0 auto;
   width: 90%;

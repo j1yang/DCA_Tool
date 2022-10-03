@@ -1,8 +1,6 @@
 import React from 'react';
 import AssetLineItem from '../assetLineItem/assetLineItem';
 import styles from './displayTotal.module.css';
-import Table from 'react-bootstrap/Table';
-import 'bootstrap/dist/css/bootstrap.min.css';
 const DisplayTotal = ({assets, findAssetId,componentName}) => {
   return (
     <section className={styles.DisplayTotal}>

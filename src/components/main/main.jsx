@@ -6,7 +6,7 @@ import DisplayRecords from '../displayRecords/displayRecords';
 import styles from './main.module.css';
 
 
-const Main = ({assets, quotes, profits, assetRecords}) => {
+const Main = ({assets, quotes, profits, assetRecords,authService}) => {
   const [assetId, setAssetId] = useState(0);
 
   const findAssetId = (assetId) => {
@@ -36,6 +36,10 @@ const Main = ({assets, quotes, profits, assetRecords}) => {
   const getComponentName = (componentName) => {
     const component = (componentName === null) ? 'quote' : componentName;
     setComponentName(component);
+  };
+
+  const onLogout = () => {
+    authService.logout();
   };
 
   return (
