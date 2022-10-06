@@ -31,8 +31,8 @@ const Login = ({authService}) => {
 
   return (
     <section className={styles.login}>
-      <section>
-        <h1>login</h1>
+      <section className={styles.container}>
+        <h1 className={styles.title}>login with</h1>
         <ul className={styles.list}>
           <li className={styles.item}>
             <button className={styles.button} onClick={onLogin}>Google</button>
