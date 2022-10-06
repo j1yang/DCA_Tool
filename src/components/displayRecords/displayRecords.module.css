@@ -17,7 +17,7 @@
   font-size: 20px;
   color: black;
   cursor: pointer;
-  margin-top: .4em;
+  margin-top: .55em;
   z-index: 1;
 }
 
@@ -48,14 +48,14 @@
 }
 
 .date{
-  min-width: 100px;
+  min-width: 110px;
 }
 .price{
   min-width: 100px;
 }
 .amount{
-  min-width: 90px;
+  min-width: 100px;
 }
 .shares{
-  min-width: 100px;
+  min-width: 80px;
 }

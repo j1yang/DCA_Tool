@@ -42,10 +42,10 @@
 }
 
 .name{
-  min-width: 70px;
+  min-width: 75px;
 }
 .symbol{
-  min-width: 70px;
+  min-width: 75px;
 }
 .quantity{
   min-width: 110px;
@@ -54,10 +54,10 @@
   min-width: 120px;
 }
 .current{
-  min-width: 120px;
+  min-width: 115px;
 }
 .earning{
-  min-width: 100px;
+  min-width: 85px;
 }
 .percentage{
   min-width: 80px;

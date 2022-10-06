@@ -1,9 +1,10 @@
 h1{
   margin: 0 auto;
   text-align: center;
-  color: rgb(56, 238, 50);
+  color: rgb(0, 0, 0);
   margin-bottom: 0.3em;
   font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
 }
 
 .logout{

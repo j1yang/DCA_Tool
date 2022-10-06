@@ -23,7 +23,7 @@
 }
 
 .ticker{
-  min-width: 100px;
+  min-width: 90px;
 }
 .name{
   min-width: 100px;
@@ -38,5 +38,5 @@
   min-width: 100px;
 }
 .goal{
-  min-width: 100px;
+  min-width: 70px;
 }
