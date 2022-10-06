@@ -6,7 +6,6 @@ import ProfitService from './services/profit';
 import '@fortawesome/fontawesome-free/js/all.js';
 import AuthService from './services/auth_service';
 import {firebaseApp} from './services/firebase'
-import{ BrowserRouter } from 'react';
 
 const profitService = new ProfitService();
 const authService = new AuthService(firebaseApp);
