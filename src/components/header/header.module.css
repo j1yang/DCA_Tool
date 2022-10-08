@@ -1,0 +1,26 @@
+.header {
+  display: flex;
+}
+
+.title{
+  margin: 0 auto;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  margin-bottom: 0.3em;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 28px;
+}
+
+.logout{
+  position: absolute;
+  right: .7em;
+  top: .7em;
+  padding: 0.5em;
+  border-radius: 9px;
+  background-color: black;
+  color: white;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+}
