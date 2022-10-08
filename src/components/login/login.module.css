@@ -32,26 +32,37 @@
   height: 20%;
   margin: 0.4em auto;
 }
+
+@keyframes fontSize {
+  from{
+    font-size: 0px;
+  }
+  to{
+    font-size: 13.4px;
+  }
+}
+
 .button {
   cursor: pointer;
-  --glow-color: rgb(255, 255, 255);
+  --glow-color: rgba(255, 255, 255, 0.932);
   --glow-spread-color: rgba(94, 94, 94, 0.144);
-  --enhanced-glow-color: rgb(179, 179, 179);
+  --enhanced-glow-color: rgb(26, 26, 26);
   --btn-color: rgba(44, 44, 44, 0.411);
   border: .25em solid var(--glow-color);
   padding: 1em 3em;
   color: var(--glow-color);
-  font-size: 15px;
+  animation: fontSize 3s ease;
+  transition: all 10.3s ease;
   font-weight: bold;
   background-color: var(--btn-color);
   border-radius: 1em;
   outline: none;
-  box-shadow: 0 0 10em .25em var(--glow-color),
-         0 0 7em 1em var(--glow-spread-color),
+  box-shadow: 0 0 2.2em .25em var(--glow-color),
+         0 0 7em .5em var(--glow-spread-color),
          inset 0 0 .75em .25em var(--glow-color);
   text-shadow: 0 0 .01em var(--glow-color);
   position: relative;
-  transition: all 0.3s;
+  transition: all .9s;
 }
 
 .button::after {
@@ -74,10 +85,4 @@
   box-shadow: 0 0 1em .25em var(--glow-color),
          0 0 4em 2em var(--glow-spread-color),
          inset 0 0 .75em .25em var(--glow-color);
-}
-
-.button:active {
-  box-shadow: 0 0 0.6em .25em var(--glow-color),
-         0 0 2.5em 2em var(--glow-spread-color),
-         inset 0 0 .5em .25em var(--glow-color);
 }
