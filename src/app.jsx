@@ -121,7 +121,7 @@ function App({profitService, authService}) {
               profits={profits}
               quotes={quotes} 
               assetRecords={assetRecords}
-              authService={authService}
+              authService={authService} 
           />}
         />
       </Routes>

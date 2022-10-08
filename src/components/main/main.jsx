@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import DisplayTotal from '../displayTotal/displayTotal';
 import DisplayProfits from '../displayProfits/displayProfits';
 import DisplayQuotes from '../displayQuotes/displayQuotes';
 import DisplayRecords from '../displayRecords/displayRecords';
 import styles from './main.module.css';
+import Header from '../header/header';
+import { useNavigate } from 'react-router-dom';
+import Footer from '../footer/footer';
 
 
 const Main = ({assets, quotes, profits, assetRecords,authService}) => {
@@ -42,11 +45,19 @@ const Main = ({assets, quotes, profits, assetRecords,authService}) => {
     authService.logout();
   };
 
+  const navigate = useNavigate();
+
+  useEffect(()=> {
+    authService.onAuthChange(user => {
+      if(!user){
+        navigate('/',{replace: true});
+      }
+    })
+  });
+
   return (
     <>
-      <h1>
-      💰 Dollar-Cost Averaging Status 🤑
-      </h1>
+      <Header onLogout={onLogout}/>
       <div className={styles.main}>
         <div className={styles.left}>
           <div className={styles.total}>
@@ -75,9 +86,7 @@ const Main = ({assets, quotes, profits, assetRecords,authService}) => {
           </div>
         </div>
       </div>
-      <p className={styles.footer}>
-        Copyright ©️ 2022 JaewonYang All Rights Reserved
-      </p>
+      <Footer/>
     </>
   );
 }
