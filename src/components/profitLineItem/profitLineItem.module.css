@@ -42,3 +42,10 @@
 .percentage{
   min-width: 80px;
 }
+
+.percentage.green, .earning.green{
+  color: green;
+}
+.percentage.red, .earning.red{
+  color: red;
+}
