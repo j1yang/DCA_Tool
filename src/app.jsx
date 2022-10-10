@@ -4,7 +4,7 @@ import './app.css';
 import Login from './components/login/login';
 import Main from './components/main/main';
 
-function App({profitService, authService}) {
+function App({profitService, authService, dataService}) {
   const [assets, setAssets] = useState([
     {
       id: '1',
@@ -121,7 +121,8 @@ function App({profitService, authService}) {
               profits={profits}
               quotes={quotes} 
               assetRecords={assetRecords}
-              authService={authService} 
+              authService={authService}
+              dataService={dataService} 
           />}
         />
       </Routes>

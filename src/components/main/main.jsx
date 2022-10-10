@@ -5,13 +5,16 @@ import DisplayQuotes from '../displayQuotes/displayQuotes';
 import DisplayRecords from '../displayRecords/displayRecords';
 import styles from './main.module.css';
 import Header from '../header/header';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import Footer from '../footer/footer';
 
 
-const Main = ({assets, quotes, profits, assetRecords,authService}) => {
+const Main = ({assets, quotes, profits, assetRecords,authService, dataService}) => {
+  const location = useLocation();
+  const uid = location.state.userId;
+  //dataService.setData(uid, 'assets', assets, assetRecords);
+  dataService.readData(uid, 'assets');
   const [assetId, setAssetId] = useState(0);
-
   const findAssetId = (assetId) => {
     setAssetId(assetId);
   };

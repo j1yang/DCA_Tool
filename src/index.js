@@ -5,10 +5,12 @@ import App from './app';
 import ProfitService from './services/profit';
 import '@fortawesome/fontawesome-free/js/all.js';
 import AuthService from './services/auth_service';
+import DataService from './services/data_service';
 import {firebaseApp} from './services/firebase'
 
 const profitService = new ProfitService();
 const authService = new AuthService(firebaseApp);
+const dataService = new DataService(firebaseApp);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,6 +18,7 @@ root.render(
     <App 
         profitService={profitService} 
         authService={authService}
+        dataService={dataService}
       />
   </React.StrictMode>
 );
