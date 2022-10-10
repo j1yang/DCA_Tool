@@ -9,21 +9,73 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import Footer from '../footer/footer';
 
 
-const Main = ({assets, quotes, profits, assetRecords,authService, dataService}) => {
+const Main = ({authService, dataService, profitService}) => {
   const location = useLocation();
   const uid = location.state.userId;
-  //dataService.setData(uid, 'assets', assets, assetRecords);
-  dataService.readData(uid, 'assets');
+
   const [assetId, setAssetId] = useState(0);
-  const findAssetId = (assetId) => {
-    setAssetId(assetId);
-  };
 
-  const closeTxnHistory = () => {
-    setAssetId(0);
-    getComponentName('quote');
-  }
+  const navigate = useNavigate();
 
+  const [assets, setAssets] = useState([]);
+  const [assetRecords, setAssetRecords] = useState([]);
+
+  const [quotes, setQuotes] = useState([]);
+  const [profits,setProfits]= useState([]);
+
+  const cp = require('coinpaprika-js');
+  
+  //componentDidMount
+  useEffect(()=> {
+    authService.onAuthChange(user => {
+      if(!user){
+        navigate('/',{replace: true});
+      }
+    });
+
+    //read data and store
+    dataService.readData(uid, 'assets').then(result=>{
+      setAssets(result.assetList);
+      setAssetRecords(result.assetRecords);
+    });
+  }, []);
+
+  //update profit & quote when asset is changed
+  useEffect(() => {
+    let updatedProfit = [];
+    let updatedQuote =[];
+    let x = 0 ;
+    assets.map((asset)=>{
+      cp.ticker(asset.apiId, { quotes: "USD" })
+      .then(results => {
+        const price = Object.values(results)[4];
+        return profitService.calculate(asset, parseFloat(price));
+      })
+      .then(profit => {
+        updatedProfit = [...updatedProfit, profit];
+        x++;
+        //console.log(updated);
+        if(x===3){
+          setProfits(updatedProfit);
+        }
+      });
+
+      cp.ticker(asset.apiId, { quotes: "USD" })
+      .then(results => {
+        const priceChange = Object.values(results)[12];
+        const price = Object.values(results)[4];
+        return profitService.getQuote(asset, parseFloat(price), parseFloat(priceChange));
+      }).then(quote => {
+        updatedQuote = [...updatedQuote, quote];
+        if(x===3){
+          setQuotes(updatedQuote);
+          
+        }
+      });
+    });
+  }, [assets]);
+
+  //Quote and Record Component Rendering Handle
   const renderSwitch = (componentName)=>{
     switch(componentName) {
       case 'quote':
@@ -44,19 +96,19 @@ const Main = ({assets, quotes, profits, assetRecords,authService, dataService}) 
     setComponentName(component);
   };
 
+  const findAssetId = (assetId) => {
+    setAssetId(assetId);
+  };
+
+  const closeTxnHistory = () => {
+    setAssetId(0);
+    getComponentName('quote');
+  }
+
+  //Logout
   const onLogout = () => {
     authService.logout();
   };
-
-  const navigate = useNavigate();
-
-  useEffect(()=> {
-    authService.onAuthChange(user => {
-      if(!user){
-        navigate('/',{replace: true});
-      }
-    })
-  });
 
   return (
     <>
