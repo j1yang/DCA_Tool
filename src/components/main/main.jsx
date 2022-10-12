@@ -12,7 +12,7 @@ import Footer from '../footer/footer';
 const Main = ({authService, dataService, profitService}) => {
   const location = useLocation();
   const uid = location.state.userId;
-
+  
   const [assetId, setAssetId] = useState(0);
 
   const navigate = useNavigate();
@@ -54,8 +54,7 @@ const Main = ({authService, dataService, profitService}) => {
       .then(profit => {
         updatedProfit = [...updatedProfit, profit];
         x++;
-        //console.log(updated);
-        if(x===3){
+        if(x===assets.length){
           setProfits(updatedProfit);
         }
       });
@@ -67,9 +66,8 @@ const Main = ({authService, dataService, profitService}) => {
         return profitService.getQuote(asset, parseFloat(price), parseFloat(priceChange));
       }).then(quote => {
         updatedQuote = [...updatedQuote, quote];
-        if(x===3){
+        if(x===assets.length){
           setQuotes(updatedQuote);
-          
         }
       });
     });

@@ -8,7 +8,6 @@ const Login = ({authService}) => {
 
   const goToMain = userId => {
     console.log(userId)
-    
     navigate(
       "/main", 
       { 
