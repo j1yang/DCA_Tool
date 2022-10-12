@@ -33,7 +33,11 @@
   margin: 0 auto;
   font-weight: bold;
 }
-
+.lines{
+  width: 100%;
+  height: 150px;
+  overflow-y:auto;
+}
 .ticker{
   min-width: 100px;
 }

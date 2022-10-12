@@ -15,9 +15,11 @@ const DisplayTotal = ({assets, findAssetId,componentName}) => {
           <li className={styles.input}>Input</li>
           <li className={styles.goal}>Goal</li>
         </div>
-        {assets.map(asset => (
-              <AssetLineItem asset={asset} findAssetId={findAssetId} getComponentName={componentName}/>
-        ))}
+        <div className={styles.lines}>
+          {assets.map(asset => (
+                <AssetLineItem asset={asset} findAssetId={findAssetId} getComponentName={componentName}/>
+          ))}
+        </div>
       </ul>
     </section>
   );
