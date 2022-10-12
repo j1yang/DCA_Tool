@@ -41,14 +41,17 @@
   list-style: none;
 }
 
+.lines{
+  width: 100%;
+  height: 200px;
+  overflow-y: auto;
+}
+
 .name{
-  min-width: 75px;
+  min-width: 50px;
 }
 .symbol{
-  min-width: 75px;
-}
-.quantity{
-  min-width: 110px;
+  min-width: 60px;
 }
 .purchased{
   min-width: 120px;

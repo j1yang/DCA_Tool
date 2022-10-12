@@ -14,9 +14,11 @@ const DisplayProfits = ({profits}) => {
           <li className={styles.earning}>Earning</li>
           <li className={styles.percentage}>%</li>
         </div>
-        {profits.map((profit)=>(
-          <ProfitLineItem profit={profit}/>
-        ))}
+        <div className={styles.lines}>
+          {profits.map((profit)=>(
+            <ProfitLineItem profit={profit}/>
+          ))}
+        </div>
       </ul>
     </section>
   );
