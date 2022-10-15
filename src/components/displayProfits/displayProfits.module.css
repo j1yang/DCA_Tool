@@ -45,13 +45,16 @@
   width: 100%;
   height: 200px;
   overflow-y: auto;
+  scrollbar-width: thin;
 }
+
 
 .name{
   min-width: 50px;
 }
 .symbol{
   min-width: 60px;
+  padding: 0;
 }
 .purchased{
   min-width: 120px;
@@ -63,6 +66,6 @@
   min-width: 85px;
 }
 .percentage{
-  min-width: 80px;
+  min-width: 90px;
 }
 
