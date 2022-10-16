@@ -65,7 +65,29 @@
 .earning{
   min-width: 85px;
 }
+
 .percentage{
   min-width: 90px;
 }
 
+@media screen and (min-width: 600px) and (max-width: 800px){ 
+  .name{
+    min-width: 55px;
+  }
+  .symbol{
+    min-width: 50px;
+  }
+  .purchased{
+    min-width: 115px;
+  }
+  .current{
+    min-width: 115px;
+  }
+  .earning{
+    min-width: 85px;
+  }
+  
+  .percentage{
+    min-width: 105px;
+  }
+}
