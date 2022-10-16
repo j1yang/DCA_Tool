@@ -33,3 +33,16 @@
 .shares{
   min-width: 80px;
 }
+
+@media screen and (min-width: 900px) and (max-width: 1200px) { 
+  .date{
+    display: none;
+  }
+  .price{
+    min-width: 100px;
+  }
+  .shares{
+    min-width: 80px;
+  }
+  
+}

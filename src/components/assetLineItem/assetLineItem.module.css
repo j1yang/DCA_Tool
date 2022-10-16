@@ -41,7 +41,18 @@
   min-width: 70px;
 }
 
-@media screen and (min-width: 600px) and (max-width: 800px){ 
+@media screen and (min-width: 900px) and (max-width: 1200px) { 
+  .name{
+    display: none;
+  }
+
+  .goal{
+    min-width: 100px;
+  }
+
+}
+
+@media screen and (min-width: 600px) and (max-width: 900px){ 
   
   .goal{
     min-width: 100px;

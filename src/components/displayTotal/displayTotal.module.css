@@ -35,6 +35,7 @@ h1{
   width: 95%;
   margin: 0 auto;
   font-weight: bold;
+  padding-bottom: 0.2em;
 }
 .lines{
   width: 100%;
@@ -61,7 +62,31 @@ h1{
   min-width: 75px;
 }
 
-@media screen and (min-width: 600px) and (max-width: 800px){ 
+@media screen and (min-width: 900px) and (max-width: 1200px) { 
+  .name{
+    display: none;
+  }
+
+  .avgPrice{
+    min-width: 120px;
+  }
+
+  .shares{
+    min-width: 110px;
+  }
+
+  .input{
+    min-width: 100px;
+  }
+
+  .goal{
+    min-width: 115px;
+  }
+
+}
+
+
+@media screen and (min-width: 600px) and (max-width: 900px){ 
   
   .goal{
     min-width: 110px;

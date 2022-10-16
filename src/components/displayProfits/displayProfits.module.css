@@ -70,7 +70,23 @@
   min-width: 90px;
 }
 
-@media screen and (min-width: 600px) and (max-width: 800px){ 
+
+@media screen and (min-width: 900px) and (max-width: 1200px) { 
+  .name{
+    display: none;
+  }
+
+  .symbol{
+    min-width: 50px;
+    padding: 0;
+  }
+  .percentage{
+    min-width: 100px;
+  }
+
+}
+
+@media screen and (min-width: 600px) and (max-width: 900px){ 
   .name{
     min-width: 55px;
   }

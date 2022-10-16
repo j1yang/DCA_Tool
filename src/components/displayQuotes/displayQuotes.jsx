@@ -21,7 +21,7 @@ const DisplayQuotes = ({quotes}) => {
           <li className={styles.name}>Name</li>
           <li className={styles.symbol}>Symbol</li>
           <li className={styles.price}>Price</li>
-          <li className={styles.priceChange}>24h Change</li>
+          <li className={styles.priceChange}>24h</li>
         </div>
         {quotes.map(quote => (
           <DisplayQuote coin={quote}/>
