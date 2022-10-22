@@ -109,7 +109,7 @@ const Main = ({authService, dataService, profitService}) => {
   };
 
   return (
-    <>
+    <div className={styles.container}>
       <Header onLogout={onLogout}/>
       <div className={styles.main}>
         <div className={styles.left}>
@@ -140,7 +140,7 @@ const Main = ({authService, dataService, profitService}) => {
         </div>
       </div>
       <Footer/>
-    </>
+    </div>
   );
 }
 
